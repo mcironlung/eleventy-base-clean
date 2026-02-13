@@ -10,7 +10,7 @@ public_folder: "/media"
 collections:
   posts:
     folder: "src/posts"
-    format: "html" # or md if your posts are md
+    format: "html"
   pages:
     folder: "src/pages"
     format: "html"
