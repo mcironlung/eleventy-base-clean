@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
-  <title>Home | Eleventy Super Clean</title>
+  <title>Fourth Post | Eleventy Super Clean</title>
 
   <!-- Description -->
-  <meta name="description" content="A super clean eleventy CMS with lean features.">
+  <meta name="description" content="four">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://test.com/">
+  <link rel="canonical" href="https://test.com/fourth-post/">
 
   <!-- RSS Feed -->
   <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Super Clean">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Home">
-  <meta property="og:description" content="A super clean eleventy CMS with lean features.">
-  <meta property="og:url" content="https://test.com/">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fourth Post">
+  <meta property="og:description" content="four">
+  <meta property="og:url" content="https://test.com/fourth-post/">
+  <meta property="og:type" content="article">
   <meta property="og:image" content="https://test.com/media/placeholder.jpg">
 
   <!-- Favicon -->
@@ -88,22 +88,31 @@
 </script>
 
   <main>
-    <h1>Welcome</h1>
-<p>This is the homepage.</p>
-<h2>Latest Posts</h2>
-<ul>
-  <!-- ELEVENTY: Loop through posts collection -->
-<p><li>
-<a href="/fourth-post/">Fourth Post</a>
-</li></p>
-<p><li>
-<a href="/second-post/">Second Post</a>
-</li></p>
-<p><li>
-<a href="/first-post/">First Post</a>
-</li></p>
-</ul>
+    
+<article>
 
+  
+    <h1>Fourth Post</h1>
+  
+
+  
+    <!-- Use the custom date filter from .eleventy.js
+    <p>Fri Feb 13 2026</p> -->
+  
+
+  <!-- Render content safely so markdown HTML is not escaped -->
+  <div class="post-content">
+    <p>this should have the layout now.</p>
+
+  </div>
+
+  <!-- Share Button -->
+  <div class="share-container">
+    <button class="button" id="shareBtn">Share this post!</button>
+    <p class="result" aria-live="polite"></p>
+  </div>
+  <script src="/media/js/post-share.js"></script>
+</article>
   </main>
 
   <!-- Shared footer -->

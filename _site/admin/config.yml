@@ -1,24 +1,83 @@
+# ---------------------------
+# Sveltia CMS Configuration
+# ---------------------------
+
 backend:
   name: github
   repo: mcironlung/eleventy-base-clean
+  branch: main
 
 media_folder: "src/media"
 public_folder: "/media"
 
 collections:
-  posts:
+
+  # ---------------------------
+  # Blog Posts
+  # ---------------------------
+  - name: "blog"
+    label: "Posts"
+    label_singular: "Post"
     folder: "src/posts"
-    format: "markdown"
+    create: true
+    slug: "{{slug}}"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Image", name: "image", widget: "image" }
-  pages:
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        hint: "Upload an image for this post or use a URL."
+        media_library:
+          config:
+            max_file_size: 2048000
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ---------------------------
+  # Pages
+  # ---------------------------
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
     folder: "src/pages"
-    format: "markdown"
+    create: true
+    slug: "{{slug}}"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page.njk" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        hint: "Upload an image for this page or use a URL."
+        media_library:
+          config:
+            max_file_size: 2048000
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ---------------------------
+  # Site Metadata
+  # ---------------------------
+  - name: "metadata"
+    label: "Site Metadata"
+    label_singular: "Metadata"
+    create: false
+    files:
+      - name: "metadata"
+        file: "src/data/site.js"
+        label: "Site Metadata"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Language", name: "language", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Author Name", name: "authorName", widget: "string" }
+          - { label: "Author Email", name: "authorEmail", widget: "string" }
+          - { label: "Author URL", name: "authorUrl", widget: "string" }
+          - { label: "Default Image", name: "defaultImage", widget: "image" }
