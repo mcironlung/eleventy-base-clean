@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+  
+    <url>
+      <loc>https://test.com/first-post/</loc>
+      <lastmod>2000-02-11</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/404/</loc>
+      <lastmod>2026-01-11</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/about/</loc>
+      <lastmod>2026-02-10</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/privacy-policy/</loc>
+      <lastmod>2026-02-10</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/second-post/</loc>
+      <lastmod>2026-02-11</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/</loc>
+      <lastmod>2026-02-12</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/blog/</loc>
+      <lastmod>2026-02-12</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/tags/blog/</loc>
+      <lastmod>2026-02-12</lastmod>
+    </url>
+  
+
+  
+
+
+</urlset>
+

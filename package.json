@@ -1,0 +1,12 @@
+{
+  "name": "lean-eleventy-site",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy && npx pagefind --site _site"
+  },
+  "devDependencies": {
+    "eleventy": "^2.0.0",
+    "pagefind": "^1.4.0"
+  }
+}

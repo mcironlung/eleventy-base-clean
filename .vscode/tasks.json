@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "eleventy: build (clean first)",
+      "type": "shell",
+      "command": "rm -rf _site && npx eleventy && npx pagefind --site _site",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Remove _site folder, rebuild Eleventy, then run Pagefind"
+    },
+    {
+      "label": "eleventy: serve",
+      "type": "shell",
+      "command": "npx eleventy --serve",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Start Eleventy in local serve mode (no Pagefind indexing)"
+    },
+    {
+      "label": "eleventy: build (incremental)",
+      "type": "shell",
+      "command": "npx eleventy --incremental && npx pagefind --site _site",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Build Eleventy incrementally, then run Pagefind"
+    },
+    {
+      "label": "wrangler: deploy",
+      "type": "shell",
+      "command": "wrangler pages deploy ./_site --project-name=INSERTHERE --commit-dirty=true",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Deploy site to Cloudflare Pages"
+    }
+  ]
+}

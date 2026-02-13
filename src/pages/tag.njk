@@ -1,0 +1,53 @@
+---
+layout: base.html
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tagPage
+permalink: "{{ tagPage.url }}"
+---
+
+<h1>Posts tagged "{{ tagPage.name }}"</h1>
+
+<!-- Topics (tags) -->
+{% if collections.tags %}
+  <div class="topics">
+    Topics:
+    {% for tag in collections.tags %}
+      <a href="{{ tag.url }}" class="sm-button">{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<!-- Search (Pagefind) START -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div id="search"></div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    new PagefindUI({ element: "#search" });
+  });
+</script>
+<!-- Search (Pagefind) END -->
+
+<section class="post-grid">
+  {% if tagPage.posts and tagPage.posts.length > 0 %}
+    {% set sortedPosts = tagPage.posts | reverse %}
+    {% for post in sortedPosts %}
+      <article class="post-card">
+        <a href="{{ post.url }}">
+          <div class="post-card-image">
+            {% if post.data.image %}
+              <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            {% endif %}
+          </div>
+          <h2>{{ post.data.title }}</h2>
+        </a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No posts found for this tag.</p>
+  {% endif %}
+</section>

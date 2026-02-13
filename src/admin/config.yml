@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: your-username/your-repo
+
+media_folder: "src/media"
+public_folder: "/media"
+
+collections:
+  posts:
+    folder: "src/posts"
+    format: "html" # or md if your posts are md
+  pages:
+    folder: "src/pages"
+    format: "html"
+  site:
+    label: "Site Settings"
+    files:
+      - file: "src/data/site.js"
+        label: "Site Metadata"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Language", name: "language", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Author Name", name: "authorName", widget: "string" }
+          - { label: "Author Email", name: "authorEmail", widget: "string" }
+          - { label: "Author URL", name: "authorUrl", widget: "string" }
+          - { label: "Default Image", name: "defaultImage", widget: "image" }
