@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>Eleventy Super Clean | </title>
+
+  <!-- Description -->
+  <meta name="description" content="A super clean eleventy CMS with lean features.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://test.com/tags/blog/">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Super Clean">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Eleventy Super Clean">
+  <meta property="og:description" content="A super clean eleventy CMS with lean features.">
+  <meta property="og:url" content="https://test.com/tags/blog/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://test.com/media/placeholder.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/media/placeholder.jpg" type="image/png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/media/css/styles.css">
+</head>
+<body>
+
+  <!-- Shared header -->
+  <header>
+  <a href="/" class="home-link">
+  
+    <img src="/media/placeholder.jpg" alt="Eleventy Super Clean">
+  
+  </a>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-wrapper">
+    <ul class="nav">
+      <li class="nav-item"><a href="/">Home</a></li>
+      <li class="nav-item"><a href="/about/">About</a></li>
+      <li class="nav-item"><a href="/blog/">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+</header>
+
+<!-- Mobile Slide-Out Menu -->
+<nav class="mobile-menu">
+  <button class="close-menu" aria-label="Close Menu">&times;</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+</nav>
+
+<!-- JavaScript for Mobile Menu -->
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeMenu = document.querySelector(".mobile-menu .close-menu");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.add("open");
+    document.body.classList.add("menu-open");
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+
+  // Optional: click overlay to close
+  document.body.addEventListener("click", (e) => {
+    if (e.target === document.body && document.body.classList.contains("menu-open")) {
+      mobileMenu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    }
+  });
+</script>
+
+  <main>
+    <h1>Posts tagged "blog"</h1>
+
+<!-- Topics (tags) -->
+
+  <div class="topics">
+    Topics:
+    
+      <a href="/tags/apple/" class="sm-button">apple</a>
+    
+      <a href="/tags/blog/" class="sm-button">blog</a>
+    
+      <a href="/tags/test/" class="sm-button">test</a>
+    
+      <a href="/tags/zebra/" class="sm-button">zebra</a>
+    
+  </div>
+
+
+<section class="post-grid">
+  
+    
+      <article class="post-card">
+        <a href="/second-post/">
+          <div class="post-card-image">
+            
+              <img src="/media/placeholder.jpg" alt="Second Post">
+            
+          </div>
+          <h2>Second Post</h2>
+        </a>
+      </article>
+    
+      <article class="post-card">
+        <a href="/first-post/">
+          <div class="post-card-image">
+            
+          </div>
+          <h2>First Post</h2>
+        </a>
+      </article>
+    
+  
+</section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer>
+  <p>&copy; 2026 Eleventy Super Clean | <a href="/privacy-policy">Privacy Policy</a></p>
+  <!-- Add Analytics Here If Needed -->
+</footer>
+
+
+</body>
+</html>
