@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: your-username/your-repo
+  repo: mcironlung/eleventy-base-clean
 
 media_folder: "src/media"
 public_folder: "/media"
