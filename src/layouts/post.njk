@@ -1,0 +1,28 @@
+---
+layout: base.njk
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<article>
+
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+
+  {% if date %}
+    <!-- Use the custom date filter from .eleventy.js
+    <p>{{ date | date }}</p> -->
+  {% endif %}
+
+  <!-- Render content safely so markdown HTML is not escaped -->
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+  <!-- Share Button -->
+  <div class="share-container">
+    <button class="button" id="shareBtn">Share this post!</button>
+    <p class="result" aria-live="polite"></p>
+  </div>
+  <script src="/media/js/post-share.js"></script>
+</article>

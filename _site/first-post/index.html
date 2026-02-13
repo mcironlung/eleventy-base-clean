@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
-  <title>
-    
-      First Post | Eleventy Super Clean
-    
-  </title>
+  <title>First Post | Eleventy Super Clean</title>
 
   <!-- Description -->
   <meta name="description" content="description area">
@@ -18,25 +14,14 @@
   <link rel="canonical" href="https://test.com/first-post/">
 
   <!-- RSS Feed -->
-  <link rel="alternate"
-        href="/feed/feed.xml"
-        type="application/atom+xml"
-        title="Eleventy Super Clean">
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Super Clean">
 
   <!-- Open Graph -->
-  <meta property="og:title"
-        content="First Post">
-
-  <meta property="og:description"
-        content="description area">
-
-  <meta property="og:url"
-        content="https://test.com/first-post/">
-
-  <meta property="og:type"
-        content="article">
-
-  
+  <meta property="og:title" content="First Post">
+  <meta property="og:description" content="description area">
+  <meta property="og:url" content="https://test.com/first-post/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://test.com">
 
   <!-- Favicon -->
   <link rel="icon" href="/media/placeholder.jpg" type="image/png">
@@ -46,7 +31,7 @@
 </head>
 <body>
 
-  <!-- ELEVENTY: Shared header -->
+  <!-- Shared header -->
   <header>
   <a href="/" class="home-link">
   
@@ -103,32 +88,34 @@
 </script>
 
   <main>
-    <!-- ELEVENTY: Page or Post content renders here -->
     
 <article>
 
-  <!-- ELEVENTY: Post title -->
-  <h1>First Post</h1>
-
-  <!-- ELEVENTY: Post date
-  <p>Fri Feb 11 2000 18:00:00 GMT-0600 (Central Standard Time)</p> -->
-
-  <!-- ELEVENTY: Post body -->
   
-<p>This is my first blog post.</p>
+    <h1>First Post</h1>
+  
 
+  
+    <!-- Use the custom date filter from .eleventy.js
+    <p>Fri Feb 11 2000</p> -->
+  
+
+  <!-- Render content safely so markdown HTML is not escaped -->
+  <div class="post-content">
+    <p>This is my first blog post.</p>
+
+  </div>
 
   <!-- Share Button -->
-  <script src="/media/js/post-share.js"></script>
   <div class="share-container">
     <button class="button" id="shareBtn">Share this post!</button>
     <p class="result" aria-live="polite"></p>
   </div>
+  <script src="/media/js/post-share.js"></script>
 </article>
-
   </main>
 
-  <!-- ELEVENTY: Shared footer -->
+  <!-- Shared footer -->
   <footer>
   <p>&copy; 2026 Eleventy Super Clean | <a href="/privacy-policy">Privacy Policy</a></p>
   <!-- Add Analytics Here If Needed -->

@@ -1,24 +1,22 @@
 module.exports = function (eleventyConfig) {
+
   // ---------------------------
   // PASSTHROUGH COPY
   // ---------------------------
-  // Copy media folder directly to output
   eleventyConfig.addPassthroughCopy("src/media");
 
   // ---------------------------
   // POSTS COLLECTION
   // ---------------------------
-  // Define a collection called "posts" from your posts folder
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.html").reverse();
+    return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
   });
 
   // ---------------------------
   // TAGS COLLECTION
   // ---------------------------
-  // Creates an array of tags, each with a name, URL, and posts that have that tag
   eleventyConfig.addCollection("tags", function (collectionApi) {
-    const posts = collectionApi.getFilteredByGlob("src/posts/*.html") || [];
+    const posts = collectionApi.getFilteredByGlob("src/posts/*.md") || [];
     const tagsObj = {};
 
     posts.forEach(post => {
@@ -29,11 +27,23 @@ module.exports = function (eleventyConfig) {
       });
     });
 
-    return Object.keys(tagsObj).map(tag => ({
-      name: tag,
-      posts: tagsObj[tag],
-      url: `/tags/${tag}/`
-    }));
+    return Object.keys(tagsObj)
+      .sort()
+      .map(tag => ({
+        name: tag,
+        posts: tagsObj[tag].sort((a, b) =>
+          new Date(b.date || b.data.date) - new Date(a.date || a.data.date)
+        ),
+        url: `/tags/${tag.toLowerCase().replace(/ /g, "-")}/`
+      }));
+  });
+
+  // ---------------------------
+  // DATE FILTER FOR NUNJUCKS
+  // ---------------------------
+  eleventyConfig.addFilter("date", (dateObj) => {
+    if (!dateObj) return "";
+    return new Date(dateObj).toDateString(); // Example: "Tue Feb 10 2026"
   });
 
   // ---------------------------

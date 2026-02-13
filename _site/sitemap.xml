@@ -5,56 +5,56 @@
   
     <url>
       <loc>https://test.com/first-post/</loc>
-      <lastmod>2000-02-11</lastmod>
+      <lastmod>Fri Feb 11 2000</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/404/</loc>
-      <lastmod>2026-01-11</lastmod>
+      <lastmod>Sun Jan 11 2026</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/about/</loc>
-      <lastmod>2026-02-10</lastmod>
+      <lastmod>Tue Feb 10 2026</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/privacy-policy/</loc>
-      <lastmod>2026-02-10</lastmod>
+      <lastmod>Tue Feb 10 2026</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/second-post/</loc>
-      <lastmod>2026-02-11</lastmod>
+      <lastmod>Wed Feb 11 2026</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/</loc>
-      <lastmod>2026-02-12</lastmod>
+      <lastmod>Thu Feb 12 2026</lastmod>
     </url>
   
 
   
     <url>
       <loc>https://test.com/blog/</loc>
-      <lastmod>2026-02-12</lastmod>
+      <lastmod>Thu Feb 12 2026</lastmod>
     </url>
   
 
   
     <url>
-      <loc>https://test.com/tags/blog/</loc>
-      <lastmod>2026-02-12</lastmod>
+      <loc>https://test.com/tags/apple/</loc>
+      <lastmod>Thu Feb 12 2026</lastmod>
     </url>
   
 

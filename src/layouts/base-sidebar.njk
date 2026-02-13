@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>{{ title | default(site.title) }} | {{ site.title if title else "" }}</title>
+
+  <!-- Description -->
+  <meta name="description" content="{{ description | default(site.description) }}">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title | default(site.title) }}">
+  <meta property="og:description" content="{{ description | default(site.description) }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+  <meta property="og:image" content="{{ site.url }}{{ image | default(site.defaultImage) }}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/media/placeholder.jpg" type="image/png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/media/css/styles.css">
+</head>
+<body>
+
+  <!-- Shared header -->
+  {% include "topnav.njk" %}
+
+  <main class="main-content-wrapper" style="display:flex; gap:2rem;">
+    <div class="content" style="flex:1;">
+      {{ content | safe }}
+    </div>
+
+    <aside class="sidebar">
+      <!-- Sidebar content here -->
+      <h3>Sidebar</h3>
+      <p>Put widgets, links, or other content here.</p>
+    </aside>
+  </main>
+
+  <!-- Shared footer -->
+  {% include "footer.njk" %}
+
+</body>
+</html>

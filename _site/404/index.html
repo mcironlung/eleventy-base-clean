@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
-  <title>
-    
-      404 - Page Not Found | Eleventy Super Clean
-    
-  </title>
+  <title>404 - Page Not Found | Eleventy Super Clean</title>
 
   <!-- Description -->
   <meta name="description" content="The page you are looking for has moved.">
@@ -18,25 +14,14 @@
   <link rel="canonical" href="https://test.com/404/">
 
   <!-- RSS Feed -->
-  <link rel="alternate"
-        href="/feed/feed.xml"
-        type="application/atom+xml"
-        title="Eleventy Super Clean">
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Super Clean">
 
   <!-- Open Graph -->
-  <meta property="og:title"
-        content="404 - Page Not Found">
-
-  <meta property="og:description"
-        content="The page you are looking for has moved.">
-
-  <meta property="og:url"
-        content="https://test.com/404/">
-
-  <meta property="og:type"
-        content="article">
-
-  
+  <meta property="og:title" content="404 - Page Not Found">
+  <meta property="og:description" content="The page you are looking for has moved.">
+  <meta property="og:url" content="https://test.com/404/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://test.com">
 
   <!-- Favicon -->
   <link rel="icon" href="/media/placeholder.jpg" type="image/png">
@@ -46,7 +31,7 @@
 </head>
 <body>
 
-  <!-- ELEVENTY: Shared header -->
+  <!-- Shared header -->
   <header>
   <a href="/" class="home-link">
   
@@ -103,33 +88,32 @@
 </script>
 
   <main>
-    <!-- ELEVENTY: Page or Post content renders here -->
     
+<article>
+
   <!-- ELEVENTY: Page title -->
   <h1>404 - Page Not Found</h1>
 
-  <!-- ELEVENTY: Page date
-  <p>Sun Jan 11 2026 05:11:11 GMT-0600 (Central Standard Time)</p> -->
+  <!-- ELEVENTY: Page date 
+  <p>Sun Jan 11 2026</p> -->
 
   <!-- ELEVENTY: Page body -->
-  
-<p>Bummer! It looks like the page you are looking for has moved. Use the search bar below and it will appear. </p>
-
+  <p>Bummer! It looks like the page you are looking for has moved. Use the search bar below and it will appear. </p>
 <!-- Search (Pagefind) START -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
-
 <div id="search"></div>
-
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     new PagefindUI({ element: "#search" });
   });
 </script>
 <!-- Search (Pagefind) END -->
+
+</article>
   </main>
 
-  <!-- ELEVENTY: Shared footer -->
+  <!-- Shared footer -->
   <footer>
   <p>&copy; 2026 Eleventy Super Clean | <a href="/privacy-policy">Privacy Policy</a></p>
   <!-- Add Analytics Here If Needed -->

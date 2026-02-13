@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
 backend:
   name: github
   repo: mcironlung/eleventy-base-clean
@@ -10,7 +8,14 @@ public_folder: "/media"
 collections:
   posts:
     folder: "src/posts"
-    format: "html"
+    format: "markdown"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Image", name: "image", widget: "image" }
   pages:
     folder: "src/pages"
     format: "html"

@@ -1,7 +1,7 @@
-module.exports = function(collections) {
-  // Use the 'posts' collection safely
-  const posts = collections.posts || [];
+const slugify = require("slugify");
 
+module.exports = function (collections) {
+  const posts = collections.posts || [];
   const tagsObj = {};
 
   posts.forEach(post => {
@@ -15,6 +15,6 @@ module.exports = function(collections) {
   return Object.keys(tagsObj).map(tag => ({
     name: tag,
     posts: tagsObj[tag],
-    url: `/tags/${tag}/`
+    url: `/tags/${slugify(tag, { lower: true })}/`
   }));
 };

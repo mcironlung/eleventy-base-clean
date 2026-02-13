@@ -1,12 +1,11 @@
 ---
-layout: base.html
+layout: base.njk
 pagination:
   data: collections.tags
-  size: 1
   alias: tagPage
-permalink: "{{ tagPage.url }}"
+  size: 1
+permalink: "{{ tagPage.url }}/index.html"
 ---
-
 <h1>Posts tagged "{{ tagPage.name }}"</h1>
 
 <!-- Topics (tags) -->
@@ -19,23 +18,9 @@ permalink: "{{ tagPage.url }}"
   </div>
 {% endif %}
 
-<!-- Search (Pagefind) START -->
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/pagefind/pagefind-ui.js"></script>
-
-<div id="search"></div>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    new PagefindUI({ element: "#search" });
-  });
-</script>
-<!-- Search (Pagefind) END -->
-
 <section class="post-grid">
-  {% if tagPage.posts and tagPage.posts.length > 0 %}
-    {% set sortedPosts = tagPage.posts | reverse %}
-    {% for post in sortedPosts %}
+  {% if tagPage.posts and tagPage.posts.length %}
+    {% for post in tagPage.posts %}
       <article class="post-card">
         <a href="{{ post.url }}">
           <div class="post-card-image">

@@ -1,0 +1,17 @@
+---
+layout: base.njk
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<article>
+
+  <!-- ELEVENTY: Page title -->
+  <h1>{{ title }}</h1>
+
+  <!-- ELEVENTY: Page date 
+  <p>{{ date | date }}</p> -->
+
+  <!-- ELEVENTY: Page body -->
+  {{ content | safe }}
+
+</article>

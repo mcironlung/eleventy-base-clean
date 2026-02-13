@@ -362,6 +362,10 @@ button.button {
   appearance: none;
 }
 
+#shareBtn {
+  margin-top: 25px;
+}
+
 /* =========================
    Listings NOT USED YET
    ========================= */
