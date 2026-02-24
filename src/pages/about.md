@@ -3,7 +3,9 @@ layout: page.njk
 title: About
 date: 2026-02-10T18:00:00
 description: description area
-image: 
+image: /media/placeholder.jpg
 ---
 
-<p>This is my about page.</p>
+This is my about page.
+
+![placeholder](/media/placeholder.jpg)

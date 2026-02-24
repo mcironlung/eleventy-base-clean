@@ -7,13 +7,16 @@
 
   --color-gray-20: #e0e0e0;
   --color-gray-50: #c0c0c0;
-  --color-gray-90: #333;
 
   --background-color: #fff;
-  --text-color: var(--color-gray-90);
+  --text-color: #333;
   --text-color-link: #082840;
-  --text-color-link-active: #5f2b48;
-  --text-color-link-visited: #17050f;
+
+  --blockquote-color: #FFD600;
+  --button-hover-bg: #0a3a5a;
+  --shadow-light: 0 5px 15px rgba(0,0,0,0.05);
+
+  --home-link-max-width: 350px;
 }
 
 /* =========================
@@ -62,41 +65,21 @@ a[aria-current="page"] {
 }
 
 /* =========================
-   Images & Media
-   ========================= */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-img[src$=".svg"] {
-  width: 100%;
-  max-width: none;
-}
-
-.post img {
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
-}
-
-/* =========================
-   Layout: Header, Main, Footer
+   Header & Logo
    ========================= */
 header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
-  border-bottom: 1px dashed var(--color-gray-20);
+  padding: 10px;
+  border-bottom: 1px solid var(--color-gray-20);
 }
 
 .home-link {
   font-size: 18px;
   font-weight: 700;
-  max-width: 250px;
+  max-width: var(--home-link-max-width);
   flex-grow: 1;
 }
 
@@ -104,6 +87,9 @@ header {
   max-height: 100px;
 }
 
+/* =========================
+   Main & Footer
+   ========================= */
 main, footer {
   padding: 1rem;
 }
@@ -145,7 +131,7 @@ main :first-child {
   right: -260px;
   width: 250px;
   height: 100vh;
-  background: #fff;
+  background: var(--background-color);
   box-shadow: -2px 0 10px rgba(0,0,0,0.1);
   padding: 1rem 2rem;
   display: flex;
@@ -236,17 +222,14 @@ body.menu-open::before {
 }
 
 /* =========================
-   Blockquote
+   Typography & Blockquote
    ========================= */
 blockquote {
-  border-left: 5px solid #FFD600;
+  border-left: 5px solid var(--blockquote-color);
   padding-left: 1em;
   margin-left: 2em;
 }
 
-/* =========================
-   Post Lists / Cards  NOT USED YET
-   ========================= */
 .postlist {
   list-style: none;
   padding: 0;
@@ -262,10 +245,10 @@ blockquote {
 }
 
 .post-card {
-  background: #fff;
+  background: var(--background-color);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-light);
   transition: transform 0.2s;
   text-decoration: none;
   display: flex;
@@ -285,8 +268,8 @@ blockquote {
 
 .post-card-image {
   width: 100%;
-  aspect-ratio: 16 / 9; /* keeps 16:9 ratio */
-  background-color: var(--text-color-link); /* placeholder color if no image */
+  aspect-ratio: 16 / 9;
+  background-color: var(--text-color-link);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -296,7 +279,7 @@ blockquote {
 .post-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* crop & fill the container */
+  object-fit: cover;
   display: block;
 }
 
@@ -304,7 +287,7 @@ blockquote {
 .post-card h3 {
   font-size: 1.2rem;
   margin: 1rem;
-  color: #222;
+  color: var(--text-color);
   font-weight: bold;
   text-align: center;
 }
@@ -334,7 +317,7 @@ blockquote {
   display: inline-block;
   background: var(--text-color-link);
   color: #fff !important;
-  padding: 0.15rem 0.25rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 8px;
   text-decoration: none !important;
   font-weight: 600;
@@ -350,12 +333,7 @@ blockquote {
 
 .button:hover, .sm-button:hover {
   transform: translateY(-3px);
-  background: #0a3a5a;
-}
-
-.button:focus, .sm-button:focus {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
+  background: var(--button-hover-bg);
 }
 
 button.button {
@@ -367,102 +345,8 @@ button.button {
 }
 
 /* =========================
-   Listings NOT USED YET
+   Masonry Gallery & Lightbox
    ========================= */
-.listing,
-.featured-listing {
-  display: block;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  margin: 1.5rem 0;
-  text-decoration: none;
-  color: #333;
-}
-
-.listing {
-  background: #f7f7f7;
-  border-left: 4px solid #dbdbdb;
-}
-
-.featured-listing {
-  background: #fffbe6;
-  border-left: 4px solid #FFD600;
-}
-
-/* =========================
-   Spacers NOT USED YET
-   ========================= */
-.spacer {
-  margin: 50px 0;
-}
-
-/* =========================
-   Signup Form NOT USED YET
-   ========================= */
-.signup {
-  background-color: #f7fbff;
-  border: 2px solid var(--text-color-link);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
-}
-
-.signup h2 {
-  color: var(--text-color-link);
-  font-size: 1.75rem;
-  margin-top: 0;
-}
-
-.signup p {
-  margin-bottom: 1em;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-}
-
-.signup label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-.signup input[type="text"],
-.signup input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.signup input[type="submit"] {
-  background-color: var(--text-color-link);
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.signup input[type="submit"]:hover {
-  background-color: #0b385a;
-}
-
-.signup .hidden-field {
-  display: none;
-}
-
-/* =========================
-   Masonry Gallery for Posts
-   ========================= */
-
-/* Masonry gallery */
 .masonry-gallery {
   column-count: 3;
   column-gap: 10px;
@@ -486,7 +370,7 @@ button.button {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0,0,0,0.9);
   text-align: center;
   z-index: 999;
 }
@@ -494,8 +378,8 @@ button.button {
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
+  box-shadow: var(--shadow-light);
   margin-top: 5%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 /* Click anywhere to close */
@@ -506,16 +390,17 @@ button.button {
   text-decoration: none;
 }
 
-/* Show lightbox when targeted */
 .lightbox:target {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* optional */
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* Responsive masonry */
+/* =========================
+   Responsive Masonry
+   ========================= */
 @media (max-width: 900px) {
   .masonry-gallery {
     column-count: 2;

@@ -25,13 +25,15 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "text", hint: "Two sentences about the post for SEO purposes."}
       - label: "Tags (one per line)"
         name: "tags"
         widget: "list"
+        required: false
       - label: "Featured Image"
         name: "image"
         widget: "image"
+        required: false
         hint: "Upload an image for this post or use a URL."
         media_library:
           config:
@@ -40,6 +42,7 @@ collections:
       - label: "Photo Gallery"
         name: "gallery"
         widget: "list"
+        required: false
         hint: "Add multiple images for the gallery"
         types:
           - label: "Gallery Item"
@@ -82,36 +85,64 @@ collections:
     create: false
     files:
       - name: "metadata"
-        file: "src/_data/site.json"
         label: "Site Metadata"
+        file: "src/_data/site.json"
         fields:
           - label: "Site Title"
             name: "title"
             widget: "string"
+            default: "Eleventy Super Clean"
           - label: "Site URL"
             name: "url"
             widget: "string"
+            default: "https://test.com"
+            required: false
           - label: "Language"
             name: "language"
             widget: "string"
+            default: "en"
+            required: false
           - label: "Description"
             name: "description"
             widget: "text"
+            default: "A super clean eleventy CMS with lean features."
           - label: "Logo"
             name: "logo"
             widget: "image"
+            default: "/media/placeholder.jpg"
           - label: "Default Image"
             name: "defaultImage"
             widget: "image"
+            default: "/media/placeholder.jpg"
           - label: "Author Name"
             name: "authorName"
             widget: "string"
+            default: "Andy"
+            required: false
           - label: "Author Email"
             name: "authorEmail"
             widget: "string"
+            default: "andy@test.com"
+            required: false
           - label: "Author URL"
             name: "authorUrl"
             widget: "string"
+            default: "https://test.com/about"
+            required: false
           - label: "Copyright Year"
             name: "year"
             widget: "number"
+            default: 2026
+          - label: "Header Display"
+            name: "headerDisplay"
+            widget: "select"
+            options:
+              - "logo"
+              - "siteName"
+            default: "logo"
+            hint: "Choose whether to display the site logo or the site name in the header"
+          - label: "Header Max Width"
+            name: "headerMaxWidth"
+            widget: "string"
+            default: "350px"
+            hint: "Set the max-width of the header link (e.g., 350px)"

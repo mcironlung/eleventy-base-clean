@@ -7,7 +7,9 @@ tags:
   - blog
   - zebra
   - apple
-image: 
+image: null
 ---
 
 <p>This is my first blog post.</p>
+
+![](/media/placeholder.jpg)

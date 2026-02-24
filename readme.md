@@ -9,10 +9,4 @@ I will update notes here later.
 
 things to add
 
-photo gallery
 small blocks library?
-
-
-
-Admin working but site.js needs work in there, i want to show what is currently in the fields for example.
-update

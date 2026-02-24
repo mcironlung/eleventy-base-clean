@@ -1,9 +1,9 @@
 <header>
-  <a href="/" class="home-link">
-  {% if site.logo %}
+  <a href="/" class="home-link" style="--home-link-max-width: {{ site.headerMaxWidth }};">
+  {% if site.headerDisplay == "logo" and site.logo %}
     <img src="{{ site.logo }}" alt="{{ site.title }}">
   {% else %}
-    {{ site.title }}
+    <h1>{{ site.title }}</h1>
   {% endif %}
   </a>
 

@@ -8,5 +8,7 @@
   "authorName": "Andy M",
   "authorEmail": "andy@test.com",
   "authorUrl": "https://test.com/about",
-  "year": 2026
+  "year": 2026,
+  "headerDisplay": "siteName",
+  "headerMaxWidth": "350px"
 }
