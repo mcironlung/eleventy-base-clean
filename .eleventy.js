@@ -5,6 +5,8 @@ module.exports = function (eleventyConfig) {
   // ---------------------------
   eleventyConfig.addPassthroughCopy("src/media");
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
 
   // ---------------------------
   // POSTS COLLECTION
