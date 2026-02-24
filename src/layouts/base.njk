@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
-  <title>{{ title | default(site.title) }} | {{ site.title if title else "" }}</title>
+ <title>{{ (title | default('Home')) ~ ' | ' ~ site.title }}</title>
 
   <!-- Description -->
   <meta name="description" content="{{ description | default(site.description) }}">

@@ -1,14 +1,19 @@
+const fs = require("fs");
+const path = require("path");
+
+const jsonPath = path.join(__dirname, "site.json");
+const rawData = fs.readFileSync(jsonPath, "utf-8");
+const data = JSON.parse(rawData);
+
 module.exports = {
-  title: "Eleventy Super Clean",
-  url: "https://test.com",
-  language: "en",
-  description: "A super clean eleventy CMS with lean features.",
-  logo: "/media/placeholder.jpg",
-  author: {
-    name: "Andy",
-    email: "andy@test.com",
-    url: "https://test.com/about",
-  },
-  year: new Date().getFullYear(),
-  defaultImage: "/media/placeholder.jpg"
+  title: data.title,
+  url: data.url,
+  language: data.language,
+  description: data.description,
+  logo: data.logo,
+  defaultImage: data.defaultImage,
+  authorName: data.authorName,
+  authorEmail: data.authorEmail,
+  authorUrl: data.authorUrl,
+  year: data.year
 };

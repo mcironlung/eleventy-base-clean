@@ -1,0 +1,12 @@
+{
+  "title": "Eleventy Base Clean",
+  "url": "https://test.com",
+  "language": "en",
+  "description": "A super clean eleventy CMS with lean features.",
+  "logo": "/media/placeholder.jpg",
+  "defaultImage": "/media/placeholder.jpg",
+  "authorName": "Andy M",
+  "authorEmail": "andy@test.com",
+  "authorUrl": "https://test.com/about",
+  "year": 2026
+}

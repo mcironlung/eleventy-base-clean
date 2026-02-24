@@ -19,6 +19,29 @@ permalink: "/{{ page.fileSlug }}/"
     {{ content | safe }}
   </div>
 
+  <!-- Gallery -->
+  {% if gallery %}
+  <div class="masonry-gallery">
+    {% for entry in gallery %}
+      {% if entry.image %}
+        {% set imgId = "gallery-img-" ~ loop.index %}
+        <div class="masonry-item">
+          <!-- Link to the lightbox -->
+          <a href="#{{ imgId }}">
+            <img src="{{ entry.image }}" alt="{{ title }}">
+          </a>
+        </div>
+
+        <!-- Lightbox overlay -->
+        <div id="{{ imgId }}" class="lightbox">
+          <a href="#" class="close"></a>
+          <img src="{{ entry.image }}" alt="{{ title }}">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
   <!-- Share Button -->
   <div class="share-container">
     <button class="button" id="shareBtn">Share this post!</button>
