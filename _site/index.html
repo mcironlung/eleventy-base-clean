@@ -89,21 +89,48 @@
 
   <main>
     <h1>Welcome</h1>
-<p>This is the homepage.</p>
-<h2>Latest Posts</h2>
-<ul>
-  <!-- ELEVENTY: Loop through posts collection -->
-<p><li>
-<a href="/fourth-post/">Fourth Post</a>
-</li></p>
-<p><li>
-<a href="/second-post/">Second Post</a>
-</li></p>
-<p><li>
-<a href="/first-post/">First Post</a>
-</li></p>
-</ul>
 
+<p>This is the homepage.</p>
+
+<h2>Latest Posts</h2>
+
+<section class="post-grid">
+  
+    
+    
+      <article class="post-card">
+        <a href="/fourth-post/">
+          <div class="post-card-image">
+            
+              <img src="/media/placeholder.jpg" alt="Fourth Post">
+            
+          </div>
+          <h2>Fourth Post</h2>
+        </a>
+      </article>
+    
+      <article class="post-card">
+        <a href="/second-post/">
+          <div class="post-card-image">
+            
+              <img src="/media/placeholder.jpg" alt="Second Post">
+            
+          </div>
+          <h2>Second Post</h2>
+        </a>
+      </article>
+    
+      <article class="post-card">
+        <a href="/first-post/">
+          <div class="post-card-image">
+            
+          </div>
+          <h2>First Post</h2>
+        </a>
+      </article>
+    
+  
+</section>
   </main>
 
   <!-- Shared footer -->
