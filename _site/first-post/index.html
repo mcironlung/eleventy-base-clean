@@ -104,18 +104,46 @@
         </div>
 
       </div> </div> </div> </main>
+
+<!-- Scroll Script -->
+<progress 
+  id="reading-progress" 
+  class="progress is-primary is-small" 
+  value="0" 
+  max="100" 
+  style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; border-radius: 0; height: 5px;">
+</progress>
+<script>
+  window.addEventListener('scroll', () => {
+    const progressBar = document.getElementById('reading-progress');
+    
+    // Calculate how far down the page we are
+    const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    
+    // Calculate the total scrollable height
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Turn it into a percentage (0 to 100)
+    const scrolled = (windowScroll / height) * 100;
+    
+    // Update the progress bar value
+    progressBar.value = scrolled;
+  });
+</script>
   </main>
 
   <!-- Shared footer -->
   <footer class="footer has-background-dark has-text-light">
   <div class="container">
     <div class="content has-text-centered">
-      <p>
-        &copy; 2026 Eleventy Base 
-        <span class="mx-2">|</span> 
-        <a href="/privacy-policy" class="has-text-info-light">Privacy Policy</a> 
-        <span class="mx-2">|</span> 
-        <a href="/admin" class="has-text-info-light">Admin</a>
+      <div class="buttons is-centered are-small mb-4">
+        <a href="/privacy-policy" class="button is-dark is-inverted is-outlined">Privacy Policy</a>
+        <a href="/admin" class="button is-dark is-inverted is-outlined">Admin</a>
+      </div>
+      
+      <p class="is-size-7">
+        &copy; 2026 Eleventy Base — Built with 
+        <a href="https://amperspectives.com" class="has-text-primary-light">Andy1 Theme</a>
       </p>
     </div>
   </div>
