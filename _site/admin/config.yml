@@ -21,6 +21,8 @@ collections:
     folder: "src/posts"
     create: true
     slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "Title", name: "title", widget: "string" }
@@ -63,6 +65,8 @@ collections:
     folder: "src/pages"
     create: true
     slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page.njk" }
       - { label: "Title", name: "title", widget: "string" }
@@ -71,21 +75,59 @@ collections:
       - label: "Featured Image"
         name: "image"
         widget: "image"
+        required: false
         hint: "Upload an image for this page or use a URL."
         media_library:
           config:
             max_file_size: 2048000
       - { label: "Body", name: "body", widget: "markdown" }
 
+# ---------------------------
+  # Key Site Pages (Singletons)
+  # ---------------------------
+  - name: "site_pages"
+    label: "Key Site Pages"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "Homepage"
+        file: "src/index.njk"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string", hint: "Shows in the browser tab. Recommended: Home" }
+          - { label: "Description (SEO)", name: "description", widget: "text", hint: "Two sentences about the page for SEO purposes."}
+          - { label: "Hero Title", name: "hero_title", widget: "string", required: false }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false }
+          - { label: "Hero Image", name: "image", widget: "image", required: false }
+
+      - name: "blog_index"
+        label: "Blog Feed Page"
+        file: "src/pages/blog.njk" # Located in src/pages/
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "image", widget: "image", required: false }
+
+      - name: "tags_index"
+        label: "Tags Archive"
+        file: "src/pages/tags.njk" # Located in src/pages/
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Hero Image", name: "image", widget: "image", required: false }
+
   # ---------------------------
   # Site Metadata
   # ---------------------------
   - name: "metadata"
-    label: "Site Metadata"
+    label: "Site Settings"
     create: false
+    editor:
+      preview: false
     files:
       - name: "metadata"
-        label: "Site Metadata"
+        label: "Site Settings (Be Careful Editing This)"
         file: "src/_data/site.json"
         fields:
           - label: "Site Title"

@@ -1,10 +1,11 @@
 ---
 layout: post.njk
 title: Fourth Post
-date: 2026-02-13T15:03:00
+date: 2026-02-26T10:23:00
 description: four
 tags:
   - forks
+  - blog
 image: /media/placeholder.jpg
 gallery:
   - type: item
@@ -17,4 +18,4 @@ gallery:
     image: /media/chicken.jpg
 ---
 
-this should have the layout now.
+this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.  this should have the layout now.

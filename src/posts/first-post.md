@@ -7,9 +7,11 @@ tags:
   - blog
   - zebra
   - apple
-image: null
+image: /media/giorgio-trovato-dxPAKBee6Kg-unsplash Large.jpeg
 ---
 
-<p>This is my first blog post.</p>
+This is my first blog post.
+
+## testing h2 tag
 
 ![](/media/placeholder.jpg)

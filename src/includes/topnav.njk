@@ -1,56 +1,36 @@
 <header>
-  <a href="/" class="home-link" style="--home-link-max-width: {{ site.headerMaxWidth }};">
-  {% if site.headerDisplay == "logo" and site.logo %}
-    <img src="{{ site.logo }}" alt="{{ site.title }}">
-  {% else %}
-    <h1>{{ site.title }}</h1>
-  {% endif %}
-  </a>
+  <nav class="navbar py-4" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+          {% if site.headerDisplay == "logo" and site.logo %}
+            <img src="{{ site.logo | url }}" alt="{{ site.title }}" style="max-height: 4rem;">
+          {% else %}
+            <span class="is-size-4 has-text-weight-bold">{{ site.title }}</span>
+          {% endif %}
+        </a>
 
-  <!-- Desktop Navigation -->
-  <nav class="nav-wrapper">
-    <ul class="nav">
-      <li class="nav-item"><a href="/">Home</a></li>
-      <li class="nav-item"><a href="/about/">About</a></li>
-      <li class="nav-item"><a href="/blog/">Blog</a></li>
-    </ul>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarMain" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="/" class="navbar-item">Home</a>
+          <a href="/about" class="navbar-item">About</a>
+          <a href="/blog" class="navbar-item">Blog</a>
+          <div class="navbar-item">
+            <button id="theme-toggle" class="button" aria-label="Toggle dark mode">
+              <span id="theme-icon">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </nav>
-
-  <!-- Mobile Menu Toggle -->
-  <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
 </header>
-
-<!-- Mobile Slide-Out Menu -->
-<nav class="mobile-menu">
-  <button class="close-menu" aria-label="Close Menu">&times;</button>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/blog/">Blog</a></li>
-  </ul>
-</nav>
-
-<!-- JavaScript for Mobile Menu -->
-<script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const closeMenu = document.querySelector(".mobile-menu .close-menu");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.add("open");
-    document.body.classList.add("menu-open");
-  });
-
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  });
-
-  // Optional: click overlay to close
-  document.body.addEventListener("click", (e) => {
-    if (e.target === document.body && document.body.classList.contains("menu-open")) {
-      mobileMenu.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-</script>

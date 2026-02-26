@@ -1,418 +1,167 @@
-/* =========================
-   :root Variables
-   ========================= */
 :root {
-  --font-family: "Courier New", Courier, monospace;
-  --font-family-monospace: Consolas, Menlo, Monaco, monospace;
+  /* 1. PRIMARY (Your Blue) */
+  --bulma-primary: #005ed1;
+  --bulma-primary-h: 213deg;
+  --bulma-primary-s: 100%;
+  --bulma-primary-l: 41%;
+  --bulma-primary-invert: #ffffff;
 
-  --color-gray-20: #e0e0e0;
-  --color-gray-50: #c0c0c0;
+  /* 2. LINK */
+  --bulma-link: #485fc7;
+  --bulma-link-h: 229deg;
+  --bulma-link-s: 53%;
+  --bulma-link-l: 53%;
+  --bulma-link-invert: #ffffff;
 
-  --background-color: #fefefe;
-  --text-color: #333;
-  --text-color-link: #082840;
+  /* 3. INFO */
+  --bulma-info: #3e8ed0;
+  --bulma-info-h: 207deg;
+  --bulma-info-s: 61%;
+  --bulma-info-l: 53%;
+  --bulma-info-invert: #ffffff;
 
-  --blockquote-color: #FFD600;
-  --button-hover-bg: #0a3a5a;
-  --shadow-light: 0 5px 15px rgba(0,0,0,0.05);
+  /* 4. SUCCESS */
+  --bulma-success: #48c78e;
+  --bulma-success-h: 153deg;
+  --bulma-success-s: 53%;
+  --bulma-success-l: 53%;
+  --bulma-success-invert: #ffffff;
 
-  --home-link-max-width: 350px;
+  /* 5. WARNING */
+  --bulma-warning: #ffe08a;
+  --bulma-warning-h: 44deg;
+  --bulma-warning-s: 100%;
+  --bulma-warning-l: 77%;
+  --bulma-warning-invert: rgba(0, 0, 0, 0.7);
+
+  /* 6. DANGER */
+  --bulma-danger: #f14668;
+  --bulma-danger-h: 348deg;
+  --bulma-danger-s: 86%;
+  --bulma-danger-l: 61%;
+  --bulma-danger-invert: #ffffff;
+
+  /* 7. TEXT */
+  --bulma-text: #4a4a4a;
+  --bulma-text-h: 0deg;
+  --bulma-text-s: 0%;
+  --bulma-text-l: 29%;
 }
 
-/* =========================
-   Global Reset
-   ========================= */
-* {
-  box-sizing: border-box;
+/* Custom Dark Mode Overrides */
+[data-theme="dark"] {
+  --bulma-scheme-main: #0a0a0a;           /* Deepest background */
+  --bulma-scheme-main-bis: #141414;       /* Background for sections */
+  --bulma-scheme-main-ter: #1f1f1f;       /* Background for cards/boxes */
+  --bulma-text: #e0e0e0;                  /* Light grey text for readability */
+  --bulma-title-color: #ffffff;
+  --bulma-footer-background-color: #050505;
+  --bulma-border: #2b2b2b;
 }
 
-html, body {
-  margin: 0 auto;
-  padding: 0;
-  font-family: var(--font-family);
-  font-size: 18px;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  max-width: 800px;
-}
-
-html {
-  overflow-y: scroll;
-}
-
-p, li {
-  line-height: 1.5;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-/* =========================
-   Links
-   ========================= */
-a {
-  color: var(--text-color-link);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a[aria-current="page"] {
-  text-decoration: underline;
-}
-
-/* =========================
-   Header & Logo
-   ========================= */
-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid var(--color-gray-20);
-}
-
-.home-link {
-  font-size: 18px;
-  font-weight: 700;
-  max-width: var(--home-link-max-width);
-  flex-grow: 1;
-}
-
-.home-link img {
-  max-height: 100px;
-}
-
-/* =========================
-   Main & Footer
-   ========================= */
-main, footer {
-  padding: 20px;
-}
-
-main :first-child {
-  margin-top: 0;
-}
-
-/* =========================
-   Navigation
-   ========================= */
-.nav {
-  display: flex;
-  gap: 0.5em 1em;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item a[href] {
-  text-decoration: none;
-}
-
-/* =========================
-   Mobile Navigation
-   ========================= */
-.menu-toggle {
-  display: none;
-  font-size: 55px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-color-link);
-}
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 250px;
-  height: 100vh;
-  background: var(--background-color);
-  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: right 0.3s ease;
-  z-index: 999;
-  color: var(--text-color-link);
-}
-
-.mobile-menu.open {
-  right: 0;
-}
-
-.mobile-menu .close-menu {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  align-self: flex-end;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-}
-
-.mobile-menu li {
-  margin: 1rem 0;
-}
-
-.mobile-menu a {
-  font-size: 1.2rem;
-}
-
-body.menu-open::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 998;
-}
-
-/* =========================
-   Main Container & Content
-   ========================= */
-.main-container {
-  display: flex;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.content {
-  flex: 1;
-  padding-right: 30px;
-}
-
-.sidebar {
-  width: 300px;
+/* Ensure images/cards look good in dark mode */
+[data-theme="dark"] .card {
+  background-color: var(--bulma-scheme-main-ter);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 img {
-  width: 100%;
+  border-radius: var(--bulma-radius);
 }
 
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 999px) {
-  .main-container {
-    flex-direction: column;
+/* Mobile Menu Slide-in Effect Goes with custom.js too */
+@media screen and (max-width: 1023px) {
+  #navbarMain {
+    position: fixed;
+    /* Forces menu to start exactly below the navbar */
+    top: 3.25rem; 
+    right: -100%;
+    width: 280px;
+    /* Adjusts height so it doesn't scroll past the bottom of the screen */
+    height: calc(100vh - 3.25rem); 
+    display: block !important;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    background-color: white;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid #dbdbdb; /* Optional: adds a nice separator line */
   }
 
-  .content {
-    width: 100%;
-    padding: 20px 10px;
+  #navbarMain.is-active {
+    right: 0;
   }
 
-  .sidebar {
-    margin-top: 20px;
-  }
-
-  .nav-wrapper {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
+  /* Optional: Prevent the main page from scrolling when menu is open */
+  body.is-clipped {
+    overflow: hidden;
   }
 }
 
-/* =========================
-   Typography & Blockquote
-   ========================= */
-blockquote {
-  border-left: 5px solid var(--blockquote-color);
-  padding-left: 1em;
-  margin-left: 2em;
+/* Subtle lift effect for blog cards */
+.post-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensures all cards in a row are the same height */
 }
 
-.postlist {
-  list-style: none;
-  padding: 0;
-}
-
-.postlist-item {
-  margin-bottom: 1em;
-}
-
-.postlist-link {
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
-.post-card {
-  background: var(--background-color);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.2s;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.post-card:hover {
+.post-card-hover:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.post-card-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: var(--text-color-link);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.post-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.post-card h2,
-.post-card h3 {
-  font-size: 1.2rem;
-  margin: 1rem;
-  color: var(--text-color);
-  font-weight: bold;
-  text-align: center;
-}
-
-/* =========================
-   Buttons
-   ========================= */
-.button {
-  display: inline-block;
-  background: var(--text-color-link);
-  color: #fff !important;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  text-decoration: none !important;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
-  text-align: center;
-  margin: 20px 0;
-  border: none;
-}
-
-.sm-button {
-  display: inline-block;
-  background: var(--text-color-link);
-  color: #fff !important;
-  padding: 0.25rem 0.5rem;
-  border-radius: 8px;
-  text-decoration: none !important;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
-  text-align: center;
-  margin: 20px 0;
-  border: none;
-}
-
-.button:hover, .sm-button:hover {
-  transform: translateY(-3px);
-  background: var(--button-hover-bg);
-}
-
-button.button {
-  appearance: none;
-}
-
-#shareBtn {
-  margin-top: 25px;
-}
-
-/* =========================
-   Masonry Gallery & Lightbox
-   ========================= */
+/* Using Bulma variables for consistency */
 .masonry-gallery {
-  column-count: 3;
-  column-gap: 10px;
-  padding-top: 25px;
+  /* Change this to 4 if you want the images a bit smaller on wide screens */
+  column-count: 2; 
+  column-gap: 1.5rem;
+  width: 100%;
 }
 
 .masonry-item {
-  break-inside: avoid;
-  margin-bottom: 10px;
-}
-
-.masonry-item img {
+  display: inline-block; /* Essential to prevent cards from splitting across columns */
   width: 100%;
-  display: block;
-  cursor: pointer;
+  margin-bottom: 1.5rem;
 }
 
-/* Lightbox overlay */
+/* Bulma Lightbox (Modal-style) */
 .lightbox {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  text-align: center;
-  z-index: 999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: var(--shadow-light);
-  margin-top: 5%;
-}
-
-/* Click anywhere to close */
-.lightbox .close {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  text-decoration: none;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .lightbox:target {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
-/* =========================
-   Responsive Masonry
-   ========================= */
-@media (max-width: 900px) {
-  .masonry-gallery {
-    column-count: 2;
-  }
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--bulma-radius);
 }
 
-@media (max-width: 600px) {
-  .masonry-gallery {
-    column-count: 1;
-  }
+.lightbox .close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+/* Responsive Breakpoints using Bulma standards */
+@media screen and (max-width: 1023px) {
+  .masonry-gallery { column-count: 2; }
+}
+
+@media screen and (max-width: 768px) {
+  .masonry-gallery { column-count: 1; }
 }

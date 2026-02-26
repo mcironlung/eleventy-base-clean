@@ -3,49 +3,55 @@ layout: base.njk
 permalink: "/{{ page.fileSlug }}/"
 ---
 
-<article>
-
-  {% if title %}
-    <h1>{{ title }}</h1>
-  {% endif %}
-
-  {% if date %}
-    <!-- Use the custom date filter from .eleventy.js
-    <p>{{ date | date }}</p> -->
-  {% endif %}
-
-  <!-- Render content safely so markdown HTML is not escaped -->
-  <div class="post-content">
-    {{ content | safe }}
+<section class="hero is-medium is-link has-background-primary" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ image | url }}') center / cover no-repeat;">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <p class="title is-1">{{ title }}</p>
+    </div>
   </div>
+</section>
 
-  <!-- Gallery -->
-  {% if gallery %}
-  <div class="masonry-gallery">
-    {% for entry in gallery %}
-      {% if entry.image %}
-        {% set imgId = "gallery-img-" ~ loop.index %}
-        <div class="masonry-item">
-          <!-- Link to the lightbox -->
-          <a href="#{{ imgId }}">
-            <img src="{{ entry.image }}" alt="{{ title }}">
-          </a>
+<main class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8-desktop is-7-widescreen is-10-tablet">
+        
+        <div class="content">
+          {{ content | safe }}
         </div>
 
-        <!-- Lightbox overlay -->
-        <div id="{{ imgId }}" class="lightbox">
-          <a href="#" class="close"></a>
-          <img src="{{ entry.image }}" alt="{{ title }}">
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-{% endif %}
+        {% if gallery %}
+        <div class="block mt-6">
+          <div class="masonry-gallery">
+            {% for item in gallery %}
+            <div class="masonry-item">
+              <a href="#img{{ loop.index }}">
+                <div class="card is-clipped post-card-hover">
+                  <div class="card-image">
+                    <figure class="image">
+                      <img src="{{ item.image | url }}" alt="Gallery Image">
+                    </figure>
+                  </div>
+                </div>
+              </a>
+            </div>
 
-  <!-- Share Button -->
-  <div class="share-container">
-    <button class="button" id="shareBtn">Share this post!</button>
-    <p class="result" aria-live="polite"></p>
-  </div>
-  <script src="/js/post-share.js"></script>
-</article>
+            <div id="img{{ loop.index }}" class="lightbox">
+              <a href="#!" class="close"></a>
+              <img src="{{ item.image | url }}" alt="Large View">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="share-container mt-6">
+          <div class="buttons is-centered">
+            <button class="button is-primary is-rounded has-text-white is-large" id="shareBtn">
+              <span>Share this post!</span>
+            </button>
+          </div>
+          <p class="result has-text-centered is-size-7 mt-2" aria-live="polite"></p>
+        </div>
+
+      </div> </div> </div> </main>

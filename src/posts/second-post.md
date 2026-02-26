@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Second Post
+title: Second Post I am going to do a longer title here for fun.
 date: 2026-02-12
 description: description area
 tags:

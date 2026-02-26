@@ -39,20 +39,6 @@
 
   
     <url>
-      <loc>https://test.com/</loc>
-      <lastmod>Thu Feb 12 2026</lastmod>
-    </url>
-  
-
-  
-    <url>
-      <loc>https://test.com/blog/</loc>
-      <lastmod>Thu Feb 12 2026</lastmod>
-    </url>
-  
-
-  
-    <url>
       <loc>https://test.com/third-post/</loc>
       <lastmod>Thu Feb 12 2026</lastmod>
     </url>
@@ -60,18 +46,32 @@
 
   
     <url>
-      <loc>https://test.com/tags/apple/</loc>
+      <loc>https://test.com/tags/zebra/</loc>
       <lastmod>Thu Feb 12 2026</lastmod>
     </url>
   
 
   
+
+  
     <url>
       <loc>https://test.com/fourth-post/</loc>
-      <lastmod>Fri Feb 13 2026</lastmod>
+      <lastmod>Thu Feb 26 2026</lastmod>
     </url>
   
 
+  
+    <url>
+      <loc>https://test.com/blog/</loc>
+      <lastmod>Thu Feb 26 2026</lastmod>
+    </url>
+  
+
+  
+    <url>
+      <loc>https://test.com/</loc>
+      <lastmod>Thu Feb 26 2026</lastmod>
+    </url>
   
 
 

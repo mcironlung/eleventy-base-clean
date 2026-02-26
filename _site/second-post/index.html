@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
- <title>Second Post | Eleventy Base</title>
+ <title>Second Post I am going to do a longer title here for fun. | Eleventy Base</title>
 
   <!-- Description -->
   <meta name="description" content="description area">
@@ -17,7 +17,7 @@
   <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Base">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Second Post">
+  <meta property="og:title" content="Second Post I am going to do a longer title here for fun.">
   <meta property="og:description" content="description area">
   <meta property="og:url" content="https://test.com/second-post/">
   <meta property="og:type" content="article">
@@ -27,104 +27,98 @@
   <link rel="icon" href="/media/placeholder.jpg" type="image/png">
 
   <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/custom.js"></script>
+  <script src="/js/post-share.js"></script>
 </head>
 <body>
 
   <!-- Shared header -->
   <header>
-  <a href="/" class="home-link" style="--home-link-max-width: 350px;">
-  
-    <h1>Eleventy Base</h1>
-  
-  </a>
+  <nav class="navbar py-4" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+          
+            <span class="is-size-4 has-text-weight-bold">Eleventy Base</span>
+          
+        </a>
 
-  <!-- Desktop Navigation -->
-  <nav class="nav-wrapper">
-    <ul class="nav">
-      <li class="nav-item"><a href="/">Home</a></li>
-      <li class="nav-item"><a href="/about/">About</a></li>
-      <li class="nav-item"><a href="/blog/">Blog</a></li>
-    </ul>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarMain" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="/" class="navbar-item">Home</a>
+          <a href="/about" class="navbar-item">About</a>
+          <a href="/blog" class="navbar-item">Blog</a>
+          <div class="navbar-item">
+            <button id="theme-toggle" class="button" aria-label="Toggle dark mode">
+              <span id="theme-icon">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </nav>
-
-  <!-- Mobile Menu Toggle -->
-  <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
 </header>
-
-<!-- Mobile Slide-Out Menu -->
-<nav class="mobile-menu">
-  <button class="close-menu" aria-label="Close Menu">&times;</button>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/blog/">Blog</a></li>
-  </ul>
-</nav>
-
-<!-- JavaScript for Mobile Menu -->
-<script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const closeMenu = document.querySelector(".mobile-menu .close-menu");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.add("open");
-    document.body.classList.add("menu-open");
-  });
-
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  });
-
-  // Optional: click overlay to close
-  document.body.addEventListener("click", (e) => {
-    if (e.target === document.body && document.body.classList.contains("menu-open")) {
-      mobileMenu.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-</script>
 
   <main>
     
-<article>
+<section class="hero is-medium is-link has-background-primary" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('.') center / cover no-repeat;">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <p class="title is-1">Second Post I am going to do a longer title here for fun.</p>
+    </div>
+  </div>
+</section>
 
-  
-    <h1>Second Post</h1>
-  
-
-  
-    <!-- Use the custom date filter from .eleventy.js
-    <p>Wed Feb 11 2026</p> -->
-  
-
-  <!-- Render content safely so markdown HTML is not escaped -->
-  <div class="post-content">
-    <p>This is my second blog post.</p>
+<main class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8-desktop is-7-widescreen is-10-tablet">
+        
+        <div class="content">
+          <p>This is my second blog post.</p>
 <p><img src="/media/placeholder.jpg" alt=""></p>
 
-  </div>
+        </div>
 
-  <!-- Gallery -->
-  
+        
 
-  <!-- Share Button -->
-  <div class="share-container">
-    <button class="button" id="shareBtn">Share this post!</button>
-    <p class="result" aria-live="polite"></p>
-  </div>
-  <script src="/js/post-share.js"></script>
-</article>
+        <div class="share-container mt-6">
+          <div class="buttons is-centered">
+            <button class="button is-primary is-rounded has-text-white is-large" id="shareBtn">
+              <span>Share this post!</span>
+            </button>
+          </div>
+          <p class="result has-text-centered is-size-7 mt-2" aria-live="polite"></p>
+        </div>
+
+      </div> </div> </div> </main>
   </main>
 
   <!-- Shared footer -->
-  <footer>
-  <p>&copy; 2026 Eleventy Base | <a href="/privacy-policy">Privacy Policy</a></p>
-  <!-- Add Analytics Here If Needed -->
+  <footer class="footer has-background-dark has-text-light">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        &copy; 2026 Eleventy Base 
+        <span class="mx-2">|</span> 
+        <a href="/privacy-policy" class="has-text-info-light">Privacy Policy</a> 
+        <span class="mx-2">|</span> 
+        <a href="/admin" class="has-text-info-light">Admin</a>
+      </p>
+    </div>
+  </div>
 </footer>
-
 
 </body>
 </html>

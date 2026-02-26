@@ -6,7 +6,7 @@ description: description area
 tags:
   - blog
   - test
-image: ''
+image: /media/placeholder.jpg
 ---
 
 <p>This is my third blog post.</p>
