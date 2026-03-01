@@ -9,5 +9,3 @@ image: /media/placeholder.jpg
 This is my about page.
 
 ### Testing H3 Tag
-
-![placeholder](/media/placeholder.jpg)
